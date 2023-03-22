@@ -1,5 +1,4 @@
 import { Button } from '@mantine/core';
-import Hexagon from '../../assets/img/svg/hexagon.svg';
 import IconKnife from '../../assets/img/svg/icon_knife.svg';
 import { THexagonButton } from '../../typescript';
 import './style.css';
@@ -20,12 +19,12 @@ export const SeeMoreButton = () => {
   );
 };
 
-export const HexagonButton = ({ title, Icon }: THexagonButton) => {
+export const HexagonButton = ({ title, icon }: THexagonButton) => {
   return (
     <div className='hexagon'>
-      <div className='flex flex-col'>
-        <Icon />
-        <div className=''>{title}</div>
+      <div className='flex flex-col justify-center items-center'>
+        {icon}
+        <div>{title}</div>
       </div>
 
       <div className='face1'></div>

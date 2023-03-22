@@ -1,4 +1,9 @@
 export type THexagonButton = {
   title: string;
-  Icon: any;
+  icon?: any;
+};
+
+export type TTopCard = {
+  img: string;
+  title: string;
 };
