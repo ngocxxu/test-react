@@ -1,20 +1,20 @@
 import { Button } from '@mantine/core';
-import IconKnife from '../../assets/img/svg/icon_knife.svg';
-import { THexagonButton } from '../../typescript';
+import { THexagonButton, TSeeMoreButton } from '../../typescript';
 import './style.css';
 
-export const SeeMoreButton = () => {
+export const SeeMoreButton = ({ title }: TSeeMoreButton) => {
   return (
     <Button
+      className='font-[300] text-[18px] leading-[26px]'
       style={{
         background: 'linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%)',
         width: '296px',
         height: '56px',
       }}
-      radius='md'
+      radius='sm'
       size='xl'
     >
-      記録をもっと見る
+      {title}
     </Button>
   );
 };
