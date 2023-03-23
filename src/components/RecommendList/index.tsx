@@ -1,24 +1,5 @@
-import React from 'react';
+import { arrRecommendList } from '../../utils';
 import { RecommendCard } from '../Card';
-
-const arrRecommendList = [
-  {
-    title: 'RECOMMENDED COLUMN',
-    content: 'オススメ',
-  },
-  {
-    title: 'RECOMMENDED DIET',
-    content: 'ダイエット',
-  },
-  {
-    title: 'RECOMMENDED BEAUTY',
-    content: '美容',
-  },
-  {
-    title: 'RECOMMENDED HEALTH',
-    content: '健康',
-  },
-];
 
 export const RecommendList = () => {
   return (

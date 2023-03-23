@@ -8,6 +8,7 @@ const initialState: TOtherState = {
     blogList: [],
   },
   foodList: [],
+  loadNumberList: [],
 };
 
 const otherReducer = createSlice({
@@ -24,9 +25,17 @@ const otherReducer = createSlice({
         (food) => food.id === action.payload
       );
     },
+    addNumberListAction: (state, action) => {
+      if (state.loadNumberList.length > 1) return;
+      if (state.loadNumberList.length > 0) {
+        state.loadNumberList = [...state.loadNumberList, ++action.payload];
+      }
+      state.loadNumberList = [...state.loadNumberList, action.payload];
+    },
   },
 });
 
-export const { storageDataAction, filterFoodListAction } = otherReducer.actions;
+export const { storageDataAction, filterFoodListAction, addNumberListAction } =
+  otherReducer.actions;
 
 export default otherReducer.reducer;

@@ -96,8 +96,8 @@ export const data = {
 
 export function LineChart() {
   return (
-    <div className='bg-[#2E2E2E] p-6 h-[312px]'>
+    <>
       <Line options={options} data={data} />
-    </div>
+    </>
   );
 }

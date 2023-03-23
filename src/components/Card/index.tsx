@@ -25,7 +25,7 @@ export const TopCard = ({ img, title }: TTopCard) => {
 
 export const CategoryCard = ({ img, title, content }: TCategoryCard) => {
   return (
-    <div className='relative p-6 bg-primary300 inline-block'>
+    <div className='relative p-6 bg-primary300 inline-block cursor-pointer'>
       <Image
         width={234}
         height={234}

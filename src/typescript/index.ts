@@ -1,4 +1,3 @@
-import { FoodList } from './../components/FoodList/index';
 export type THexagonButton = {
   title: string;
   icon: any;
@@ -7,7 +6,8 @@ export type THexagonButton = {
 };
 
 export type TSeeMoreButton = {
-  title: string;
+  title: () => string | undefined;
+  handleAddMorePage: () => void;
 };
 
 export type TTopCard = {
@@ -41,4 +41,10 @@ export type TOtherState = {
     blogList: TColumnCard[];
   };
   foodList: TTopCard[];
+  loadNumberList: number[];
+};
+
+export type TTitleAndTime = {
+  title: string,
+  time: string,
 };

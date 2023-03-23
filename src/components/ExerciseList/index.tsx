@@ -1,4 +1,5 @@
 import { ScrollArea, Box, Group, List, Divider } from '@mantine/core';
+import { TitleAndTime } from '../Others';
 
 export const ExerciseList = () => {
   return (
@@ -15,14 +16,9 @@ export const ExerciseList = () => {
           },
         })}
       >
-        <div className='p-4'>
-          <div className='flex items-center gap-6 mb-2'>
-            <p className='font-[400] text-[15px] leading-[18px]'>
-              MY <br /> EXERCISE
-            </p>
-            <p className='font-[400] text-[22px] leading-[27px]'>2021.05.01</p>
-          </div>
-          <div>
+        <div>
+          <TitleAndTime title='MY EXERCISE' time='2021.05.01' />
+          <div className='px-4'>
             <List className='text-light list-disc justify-between flex flex-wrap gap-y-2'>
               {Array(50)
                 .fill(0)

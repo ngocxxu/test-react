@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
+import ScrollButton from '../../components/Scroll';
 
 const HomeTemplate = () => {
   return (
@@ -8,6 +9,7 @@ const HomeTemplate = () => {
       <Header />
       <Outlet />
       <Footer />
+      <ScrollButton/>
     </>
   );
 };
