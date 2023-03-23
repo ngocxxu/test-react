@@ -1,21 +1,32 @@
 //rxslice
 import { createSlice } from '@reduxjs/toolkit';
+import { TOtherState } from '../../typescript';
 
-const initialState: any = {
-  activeStep: 0,
-  isDrawer: false,
+const initialState: TOtherState = {
+  data: {
+    foodList: [],
+    blogList: [],
+  },
+  foodList: [],
 };
 
 const otherReducer = createSlice({
-  name: 'otherReducer', //ten reducer/actioname
-  initialState, //giá trị mặc định của reducer (stateDefault)
+  name: 'otherReducer',
+  initialState,
   reducers: {
-    toggleOpenComparisonTable: (state, action) => {
-      state.isOpenComparisonTable = action.payload;
+    storageDataAction: (state, action) => {
+      state.data = action.payload;
+      state.foodList = action.payload.foodList;
+    },
+    filterFoodListAction: (state, action) => {
+      state.data.foodList = state.foodList;
+      state.data.foodList = state.data.foodList.filter(
+        (food) => food.id === action.payload
+      );
     },
   },
 });
 
-export const { toggleOpenComparisonTable } = otherReducer.actions;
+export const { storageDataAction, filterFoodListAction } = otherReducer.actions;
 
 export default otherReducer.reducer;

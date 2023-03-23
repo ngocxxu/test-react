@@ -1,6 +1,9 @@
+import { FoodList } from './../components/FoodList/index';
 export type THexagonButton = {
   title: string;
   icon: any;
+  id: string;
+  handleFilterFoodList: (idItem: string) => void;
 };
 
 export type TSeeMoreButton = {
@@ -29,4 +32,13 @@ export type TColumnCard = {
   time: string;
   content: string;
   hashtag: string;
+};
+
+// REDUX
+export type TOtherState = {
+  data: {
+    foodList: TTopCard[];
+    blogList: TColumnCard[];
+  };
+  foodList: TTopCard[];
 };

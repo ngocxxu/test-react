@@ -19,9 +19,14 @@ export const SeeMoreButton = ({ title }: TSeeMoreButton) => {
   );
 };
 
-export const HexagonButton = ({ title, icon }: THexagonButton) => {
+export const HexagonButton = ({
+  title,
+  icon,
+  id,
+  handleFilterFoodList,
+}: THexagonButton) => {
   return (
-    <div className='hexagon'>
+    <div className='hexagon' onClick={() => handleFilterFoodList(id)}>
       <div className='flex flex-col justify-center items-center'>
         {icon}
         <div>{title}</div>

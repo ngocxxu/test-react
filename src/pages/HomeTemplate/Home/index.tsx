@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BlogList } from '../../../components/BlogList';
 import { SeeMoreButton } from '../../../components/Button';
 import { LineChart } from '../../../components/Chart';
@@ -7,8 +8,24 @@ import { FoodList } from '../../../components/FoodList';
 import { Menu } from '../../../components/Menu';
 import { RecommendList } from '../../../components/RecommendList';
 import { RecordList } from '../../../components/RecordList';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { storageDataAction } from '../../../redux/reducers/otherReducer';
 
 const Home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios
+      .get('/mockApi.json')
+      .then((response) => {
+        dispatch(storageDataAction(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <>
       {/* First Load Page */}
