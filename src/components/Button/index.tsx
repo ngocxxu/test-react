@@ -43,22 +43,16 @@ export const HexagonButton = ({
 export const TimerButton = () => (
   <div className='flex justify-start items-center gap-6 mt-2'>
     {Timer.map((item, idx) => (
-      <Button
-        sx={() => ({
-          '&:hover': {
-            backgroundColor: 'yellow',
-          },
-        })}
+      <button
         key={idx}
         className={`${
           Timer.length - 1 === idx
             ? 'bg-primary300400'
             : 'bg-white text-primary300400'
-        } text-[15px] font-[300]`}
-        radius='lg'
+        } text-[15px] font-[300] h-[24px] w-[56px] rounded-[11px]`}
       >
-        &nbsp; &nbsp;{item}&nbsp; &nbsp;
-      </Button>
+        {item}
+      </button>
     ))}
   </div>
 );
